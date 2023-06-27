@@ -1,12 +1,16 @@
 import { Client } from "pg";
 import { DataSource } from "typeorm";
 import { CoinInfo, EventStates } from "./models";
+require("dotenv").config();
 
-// not actual creds
-const password = "09ZQcndxZvfb4q8ctWFU";
-const user = "cetus_user";
-const host = "db.bgyjpkfmfejopdxeewwp.supabase.co";
+const password = process.env.DB_USER;
+const user = process.env.DB_USER;
+const host = process.env.DB_HOST;
 const database = "postgres";
+
+console.log(password);
+console.log(user);
+console.log(host);
 
 let client: Client | undefined;
 
